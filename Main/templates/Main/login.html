@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  {% load static %}
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styles */
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+        z-index: -1;
+    }
+    body {
+      background-color: #ffffff;
+    }
+    .login-form {
+      width: 360px;
+      margin: 50px auto;
+      font-size: 15px;
+    }
+    .login-form form {
+      margin-bottom: 15px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    }
+    .login-form h2 {
+      margin: 0 0 15px;
+      color: #333;
+    }
+    .form-control, .btn {
+      min-height: 38px;
+      border-radius: 2px;
+    }
+    .btn {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .btn-login {
+      background: #33cabb;
+      border: none;
+    }
+    .btn-login:hover {
+      background: #1d9d90;
+    }
+  </style>
+</head>
+<body>
+    <img src="{% static "images/indexbackground.webp" %}" alt="bg" class="bg">
+  <div class="login-form">
+    <form action="home/" method="">
+        <h2 class="text-center">Log in</h2>
+        <div class="form-group">
+          <input type="email" class="form-control rounded-pill" placeholder="Email" required="required">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control rounded-pill" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block rounded-pill">Log in</button>
+        </div>
+        <div class="clearfix">
+          <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+          <a href="#" class="float-right">Forgot Password?</a>
+        </div>        
+        <p class="text-center"><a href="/signup">Create an Account</a></p>
+      </form>
+      
+    
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
