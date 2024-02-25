@@ -73,6 +73,54 @@
     </div>
     
 
+    <!-- Photo Upload Section -->
+    <div class="card mb-4">
+      <div class="card-header bg-success text-white">
+        Upload Photo
+      </div>
+      <div class="card-body transparent">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="photoFile">Choose a photo file:</label>
+            <input type="file" class="form-control-file" id="photoFile" name="photoFile" accept="image/*">
+          </div>
+          <button type="submit" class="btn btn-success">Upload Photo</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Audio Upload Section -->
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        Upload Audio
+      </div>
+      <div class="card-body">
+        <form action="{% url 'predict_audio' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="audioFile">Choose an audio file:</label>
+            <input type="file" class="form-control-file" id="audioFile" name="audio" accept="audio/*">
+          </div>
+          <button type="submit" class="btn btn-info">Upload Audio</button>
+        </form>
+      </div>
+    </div>
+
+        <!-- Prediction Result Section -->
+    <div class="card mt-4" id="predictionResult">
+      <div class="card-header bg-info text-white">
+        Prediction Result
+      </div>
+      <div class="card-body">
+        <p><strong>Prediction Result:</strong> {{ result }}</p>
+        <h5>Extracted Audio Features:</h5>
+        <ul>
+          {% for key, value in audio_features.items %}
+              <li><strong>{{ key }}:</strong> {{ value }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
