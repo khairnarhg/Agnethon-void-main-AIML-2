@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Detection Program</title>
+  <!-- Bootstrap CSS -->
+  {% load static %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+  .ven{
+  background-color: rgba(255, 255, 255, 0.6); /* Adjust the alpha value (last parameter) for transparency */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  position: relative;
+  top: 80px;
+  text-align: center;
+  font-size: 10px;
+  }
+  .rectangle {
+    border-radius: 10px;
+    width: 1080px; /* Width of the vertical rectangle */
+    height: 250px; /* Height of the vertical rectangle */
+    background-color: rgba(255, 255, 255, 0.6); 
+    padding: 20px;
+    margin: 10 auto;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .bg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+    opacity: 2;
+  }
+    .transparent-jumbotron {
+  background-color: rgba(255, 255, 255, 0.6); /* Adjust the alpha value (last parameter) for transparency */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  position: relative;
+  top: 80px;
+  text-align: center;
+}
+.navbar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  height: 50px;
+}
+
+.navbar-nav .nav-link {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+#imageContainer {
+  position: relative; /* Position the div relative to the viewport */
+  border-radius: 10px;
+  top: 170px; /* Adjust as needed */
+  right: 0px; /* Adjust as needed */
+  transform: translateY(-50%); /* Center the div vertically */
+}
+
+#imageContainer img {
+  width: 50%; /* Set the width of the image to 50% of its original size */
+  border-radius: 10px;
+}
+.textContainer {
+  width: 49%;
+  border-radius: 10px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.6); /* Adjust the alpha value (last parameter) for transparency */
+  top: -125px;
+  right: -550px; /* Adjust as needed */
+  font-size: 25px;
+  height: 300px;
+  transform: translateY(-50%);
+  color: rgb(0, 0, 0); /* Adjust text color as needed */
+}
+#video-container {
+  position: relative;
+  width: 63%;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  padding: 20px;
+  background-color:rgba(255, 255, 255, 0.6); /* Adjust the alpha value (last parameter) for transparency */;
+  left: 0px;
+  top: -30px;
+}
+#text-container {
+  position: relative;
+  border-radius: 10px;
+  top: -635px;
+  height: 360px;
+  left: 700px;
+  bottom: 20px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  max-width: 300px;
+  background-color:rgba(255, 255, 255, 0.6); /* Adjust the alpha value (last parameter) for transparency */;
+  padding: 10px;
+  font-size: 25px;
+}
+#image-container {
+  position: relative; /* Position the div relative to the viewport */
+  border-radius: 10px;
+  top: -210px; /* Adjust as needed */
+  right: 0px; /* Adjust as needed */
+  transform: translateY(-50%); /* Center the div vertically */
+}
+
+#image-container img {
+  width: 50%; /* Set the width of the image to 50% of its original size */
+  border-radius: 10px;
+}
+#ic {
+  position: relative;
+  border-radius: 10px;
+  top: -1165px;
+  height: 450px;
+  left: 600px;
+  bottom: 20px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  max-width: 300px;
+  background-color:rgba(255, 255, 255, 0.6); /* Adjust the alpha value (last parameter) for transparency */;
+  padding: 10px;
+  font-size: 25px;
+}
+#additional-text-container {
+  border-radius: 10px;
+    position: relative;
+    left: -610px;
+    bottom: -230px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    width: 800px;
+    background-color: rgba(255, 255, 255, 0.6); /* Adjust the alpha value (last parameter) for transparency */;
+    padding: 10px;
+    font-size: 25px;
+}
+    
+</style>
+  </style>
+</head>
+<body>
+
+    <img src="{% static "images/bgrnd.jpg" %}" alt="bg" class="bg">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Fake Detection Program</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="login/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup/">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about/">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="learn/">What is Deepfake?</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <main role="main" class="container">
+    <div class="jumbotron transparent-jumbotron">
+        <h1 class="display-4">Welcome to DeepFake Detection Program</h1>
+    </div>
+   <div class="ven" id="po">
+      <h1 class="display-4">We here help you distinguish between real and fake media you find online, thus helping the society from being misinformed. </h2>
+   </div>
+    
+
+  </main>
+ 
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
