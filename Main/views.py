@@ -20,3 +20,12 @@ def home(request):
 def about(request):
     return render(request, 'Main/about.html')
 
+def uploadvid(request):
+    return render(request, 'Main/uploadvid.html')
+
+def uploadaud(request):
+    return render(request,'Main/uploadaud.html')
+
+def uploadimg(request):
+    return render(request,'Main/uploadimg.html')
+

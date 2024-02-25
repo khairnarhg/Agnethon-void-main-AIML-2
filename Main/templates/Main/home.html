@@ -20,7 +20,10 @@
   object-fit: cover;
   z-index: -1;
 }
-
+#gh{
+  color: white;
+  margin-top: 100px;
+}
 
 .deepfake-text {
   font-size: 24px;
@@ -44,57 +47,32 @@
 <body>
  
     <img src="{% static "images/bgrnd.jpg" %}" alt="bg" class="bg">
-  <div class="container mt-5">
-    <h1 class="text-center mb-4">Fake Information Detection</h1>
-
-    <!-- Video Upload Section -->
-    <div class="card mb-4 ">
-      <div class="card-header bg-primary text-white">
-        Upload Video
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Fake Detection Program</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/uploadvid">Video Detection</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/uploadimg">Image Detection</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/uploadaud">Audio Detection</a>
+          </li>
+        </ul>
       </div>
-      <div class="card-body ">
-        <form action="#" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="videoFile">Choose a video file:</label>
-            <input type="file" class="form-control-file" id="videoFile" name="videoFile" accept="video/*">
-          </div>
-          <button type="submit" class="btn btn-primary">Upload Video</button>
-        </form>
-      </div>
+    </nav>
+    <div class="container" id="gh">
+      <h1 class="text-left" style="font-weight: normal;">Welcome User!</h1>
+      <h2 class="text-left" style="font-weight: normal;">Here's your feed</h2>
     </div>
+    
 
-    <!-- Photo Upload Section -->
-    <div class="card mb-4">
-      <div class="card-header bg-success text-white">
-        Upload Photo
-      </div>
-      <div class="card-body transparent">
-        <form action="#" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="photoFile">Choose a photo file:</label>
-            <input type="file" class="form-control-file" id="photoFile" name="photoFile" accept="image/*">
-          </div>
-          <button type="submit" class="btn btn-success">Upload Photo</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Audio Upload Section -->
-    <div class="card">
-      <div class="card-header bg-info text-white">
-        Upload Audio
-      </div>
-      <div class="card-body">
-        <form action="#" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="audioFile">Choose an audio file:</label>
-            <input type="file" class="form-control-file" id="audioFile" name="audioFile" accept="audio/*">
-          </div>
-          <button type="submit" class="btn btn-info">Upload Audio</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
