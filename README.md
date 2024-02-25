@@ -1,12 +1,14 @@
-Basic Website implementation till evalutation 1:
-  - login/signup
-  - feedback form for our models
-  - educational awareness for users about deepfake
-  - frontend to upload audio, image and video
+Website:
+  - loging/signup frontend
+  - About us
+  - contact us
+  - Education about deepfake
+  - user landing page
+  - frontend to upload image, audio and video
 
-Deepfake Video Detection Model:
-  - Dataset found and downloaded
-  - It is taking a lot of time to pre-process the data. Will have to optimize the code.
+Model:
+  - Deepfake image detection model trained and loaded
+  - Deepfake audio detection model trained and loaded
+  - Fake news detection model trained and loaded
 
-Trending news from factcheck.org:
-  - python code to fetch news headlines and links to the blogs done
+
