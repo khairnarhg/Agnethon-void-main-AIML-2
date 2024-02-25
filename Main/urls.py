@@ -12,5 +12,5 @@ urlpatterns = [
     path('uploadaud/', views.uploadaud),
     path('uploadimg/', views.uploadimg),
 
-    path('predict_audio/', views.predict_audio, name='predict_audio'),  # Add this line
+    
 ]
